@@ -1,16 +1,19 @@
-class Array
-  def find_duplicates
-    return [] if self.length == 1
+# require_relative '../../code_timer/lib/code_timer.rb'
+# include CodeTimer
 
-    if self.length > 2
-      new_array = []
-      self.each do |word|
-        if self.count(word) > 1
-          new_array << word
-        end
+class Array
+
+  def find_duplicates
+    self.to_enum.with_index.reverse_each do |word, index|
+      if self.count(word) < 2
+        self[index] = self.last
+        self.pop
       end
-      return new_array.uniq
     end
-    [self[0]]
+    self.uniq
   end
 end
+
+
+# array_find_duplicates = Proc.new { |array| array.find_duplicates }
+# p CodeTimer.code_timer_for_arrays_given_size(array_find_duplicates, 40000)
