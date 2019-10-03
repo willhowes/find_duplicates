@@ -18,4 +18,4 @@ end
 
 
 # array_find_duplicates = Proc.new { |array| array.find_duplicates }
-# p CodeTimer.code_timer_for_arrays_given_size(array_find_duplicates, 20000)
+# CodeTimer.save_to_spreadsheet(code_timer_for_arrays(array_find_duplicates), 'find_duplicates_results')
