@@ -2,21 +2,9 @@
 # include CodeTimer
 
 class Array
-
-  # def find_duplicates
-  #   hash_of_elements = Hash.new
-  #   self.each do |word|
-  #     if self.count(word) > 1
-  #       hash_of_elements[word] = true
-  #     end
-  #   end
-  #   hash_of_elements.keys
-  # end
-
   def find_duplicates
     hash_of_elements = {}
     self.each do |x|
-
       if hash_of_elements.key?(x)
         hash_of_elements[x] = true
       else
